@@ -1,9 +1,41 @@
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
-const MyVisa = ({visa}) => {
+const MyVisa = ({ visa }) => {
 
 
 
-    const { countryPhoto, countryName, visaType, processingTime, requiredDocuments, description, fee, validity, applicationMethod } = visa;
+    const { _id, countryPhoto, countryName, visaType, processingTime, requiredDocuments, description, fee, validity, applicationMethod } = visa;
+
+    const handleDelete = _id => {
+        console.log(_id);
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/visa/${_id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "The Visa has been deleted.",
+                                icon: "success"
+                            });
+                        }
+                    })
+            }
+        });
+    }
 
     return (
         <div>
@@ -22,8 +54,10 @@ const MyVisa = ({visa}) => {
                     <p>Validity: {validity} Days</p>
                     <p>Fee: <span className="font-bold">${fee}</span> </p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-outline">Edit</button>
-                        <button className="btn btn-error text-white">Delete</button>
+                        <Link to={`updateVisa/${_id}`} className="btn btn-outline">Edit</Link>
+                        <button
+                            onClick={() => handleDelete(_id)}
+                            className="btn btn-error text-white">Delete</button>
                     </div>
                 </div>
             </div>

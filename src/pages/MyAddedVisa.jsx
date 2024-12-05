@@ -1,5 +1,4 @@
 import { useLoaderData } from "react-router-dom";
-import VisaCard from "../components/VisaCard";
 import MyVisa from "../components/MyVisa";
 
 const MyAddedVisa = () => {

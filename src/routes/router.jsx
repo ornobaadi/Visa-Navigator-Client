@@ -9,6 +9,7 @@ import MyVisaApplications from "../pages/MyVisaApplications";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import AuthLayout from "../layouts/AuthLayout";
+import UpdateVisa from "../pages/UpdateVisa";
 
 
 const router = createBrowserRouter([
@@ -29,6 +30,11 @@ const router = createBrowserRouter([
             {
                 path: '/addvisa',
                 element: <AddVisa></AddVisa>,
+            },
+            {
+                path: '/my-added-visa/updateVisa/:id',
+                element: <UpdateVisa></UpdateVisa>,
+                loader: ({params}) => fetch(`http://localhost:5000/visa/${params.id}`)
             },
             {
                 path: '/my-added-visa',

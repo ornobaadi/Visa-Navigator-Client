@@ -2,13 +2,13 @@
 
 const VisaCard = ({ visa }) => {
 
-    const { countryPhoto, countryName, visaType, processingTime, requiredDocuments, description, fee, validity, applicationMethod } = visa;
+    const { _id, countryPhoto, countryName, visaType, processingTime, requiredDocuments, description, fee, validity, applicationMethod } = visa;
 
     return (
         <div>
             <div className="card bg-base-100 w-96 shadow-xl">
                 <figure>
-                    <img className="h-32 w-48 lg:h-60 lg:w-96 object-cover"
+                    <img className="h-60 w-96 object-cover"
                         src={countryPhoto}
                     />
                 </figure>
