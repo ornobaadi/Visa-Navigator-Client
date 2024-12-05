@@ -51,8 +51,8 @@ const AddVisa = () => {
     }
 
     return (
-        <div className="bg-base-200 p-12 w-11/12 mx-auto">
-            <h2 className="text-center text-3xl font-bold mb-6">Add Visa Information</h2>
+        <div className="bg-base-200 p-10 w-11/12 mx-auto">
+            <h2 className="text-center text-3xl font-bold my-10">Add Visa Information</h2>
             <form onSubmit={handleAddVisa}>
                 {/* Country Image and Name */}
                 <div className="md:flex gap-4">

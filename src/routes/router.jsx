@@ -24,6 +24,7 @@ const router = createBrowserRouter([
             {
                 path: '/allvisa',
                 element: <AllVisa></AllVisa>,
+                loader: () => fetch('http://localhost:5000/visa')
             },
             {
                 path: '/addvisa',
@@ -32,6 +33,7 @@ const router = createBrowserRouter([
             {
                 path: '/my-added-visa',
                 element: <MyAddedVisa></MyAddedVisa>,
+                loader: () => fetch('http://localhost:5000/visa')
             },
             {
                 path: '/my-visa-applications',
