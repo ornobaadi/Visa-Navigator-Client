@@ -1,8 +1,10 @@
 import { useLoaderData } from "react-router-dom";
 import MyVisa from "../components/MyVisa";
+import { useState } from "react";
 
 const MyAddedVisa = () => {
-    const visas = useLoaderData();
+    const loadedVisas = useLoaderData();
+    const [visas, setVisas] = useState(loadedVisas);
 
     return (
         <div className="m-2 md:m-20">
@@ -12,6 +14,8 @@ const MyAddedVisa = () => {
                     visas.map(visa => <MyVisa
                         key={visa._id}
                         visa={visa}
+                        visas={visas}
+                        setVisas={setVisas}
                     ></MyVisa>)
                 }
             </div>

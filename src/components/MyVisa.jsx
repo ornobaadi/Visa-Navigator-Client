@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const MyVisa = ({ visa }) => {
+const MyVisa = ({ visa, setVisas, visas }) => {
 
 
 
@@ -31,6 +31,8 @@ const MyVisa = ({ visa }) => {
                                 text: "The Visa has been deleted.",
                                 icon: "success"
                             });
+                            const remaining = visas.filter(vis => vis._id !== _id);
+                            setVisas(remaining);
                         }
                     })
             }
