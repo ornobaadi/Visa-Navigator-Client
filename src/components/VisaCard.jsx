@@ -2,7 +2,7 @@
 
 const VisaCard = ({ visa }) => {
 
-    const { _id, countryPhoto, countryName, visaType, processingTime, requiredDocuments, description, fee, validity, applicationMethod } = visa;
+    const { _id, countryPhoto, countryName, visaType, processingTime, requiredDocuments, description, fee, validity, ageRestriction, applicationMethod } = visa;
 
     return (
         <div>

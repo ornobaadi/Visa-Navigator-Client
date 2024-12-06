@@ -5,7 +5,7 @@ const MyVisa = ({ visa }) => {
 
 
 
-    const { _id, countryPhoto, countryName, visaType, processingTime, requiredDocuments, description, fee, validity, applicationMethod } = visa;
+    const { _id, countryPhoto, countryName, visaType, processingTime, requiredDocuments, description, fee, validity, ageRestriction, applicationMethod } = visa;
 
     const handleDelete = _id => {
         console.log(_id);
