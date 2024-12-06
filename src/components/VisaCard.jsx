@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 
+import { Link } from "react-router-dom";
+
 const VisaCard = ({ visa }) => {
 
     const { _id, countryPhoto, countryName, visaType, processingTime, requiredDocuments, description, fee, validity, ageRestriction, applicationMethod } = visa;
@@ -13,15 +15,16 @@ const VisaCard = ({ visa }) => {
                     />
                 </figure>
                 <div className="card-body">
-                    <h2 className="card-title">Name:
-                        {countryName}
+                    <h2 className="font-bold text-2xl py-4">
+                        {countryName} &nbsp;
                         <div className="badge badge-info">NEW</div>
                     </h2>
-                    <p>Processing Time: {processingTime} Days</p>
-                    <p>Validity: {validity} Days</p>
-                    <p>Fee: <span className="font-bold">${fee}</span> </p>
+                    <p><span className='font-bold'>Visa Type:</span> {visaType}</p>
+                    <p><span className='font-bold'>Processing Time:</span> {processingTime} Days</p>
+                    <p><span className='font-bold'>Age Restriction:</span> {ageRestriction}+</p>
+                    <p><span className='font-bold'>Fee:</span> ${fee} </p>
                     <div className="card-actions justify-center mt-5">
-                        <button className="btn w-full btn-neutral">See Details</button>
+                        <Link to={`visa-details/${_id}`} className="btn w-full btn-neutral">See Details</Link>
                     </div>
                 </div>
             </div>

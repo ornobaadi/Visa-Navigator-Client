@@ -108,13 +108,14 @@ const MyVisa = ({ visa, setVisas, visas }) => {
                     />
                 </figure>
                 <div className="card-body">
-                    <h2 className="card-title">Name:
-                        {countryName}
+                <h2 className="font-bold text-2xl py-4">
+                        {countryName} &nbsp;
                         <div className="badge badge-info">NEW</div>
                     </h2>
-                    <p>Processing Time: {processingTime} Days</p>
-                    <p>Validity: {validity} Days</p>
-                    <p>Fee: <span className="font-bold">${fee}</span> </p>
+                    <p><span className='font-bold'>Visa Type:</span> {visaType}</p>
+                    <p><span className='font-bold'>Processing Time:</span> {processingTime} Days</p>
+                    <p><span className='font-bold'>Age Restriction:</span> {ageRestriction}+</p>
+                    <p><span className='font-bold'>Fee:</span> ${fee} </p>
                     <div className="card-actions justify-end">
                         <button 
                             onClick={() => setIsModalOpen(true)} 
