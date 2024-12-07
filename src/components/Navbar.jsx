@@ -10,9 +10,18 @@ const Navbar = () => {
         <>
             <li><NavLink to='/'>Home</NavLink></li>
             <li><NavLink to='/allvisa'>All Visa</NavLink></li>
-            <li><NavLink to='/addvisa'>Add Visa</NavLink></li>
-            <li><NavLink to='/my-added-visa'>My Added Visa</NavLink></li>
-            <li><NavLink to='/my-visa-applications'>My Applications</NavLink></li>
+            {user?.email && (
+                <li><NavLink to='/addvisa'>Add Visa</NavLink></li>
+            )}
+            {user?.email && (
+                <li><NavLink to='/my-added-visa'>My Added Visa</NavLink></li>
+            )}
+            {user?.email && (
+                <li><NavLink to='/my-visa-applications'>My Applications</NavLink></li>
+            )}
+
+
+
         </>
     )
 
@@ -49,18 +58,22 @@ const Navbar = () => {
             </div>
             <div className="navbar-end gap-2">
                 <div>
-                    { user && user?.email ? 
-                    <div className="flex items-center">
-                        <img className="w-10 h-10 rounded-full" src={user?.photoURL} alt="" />
-                        <p>{user.displayName}</p>
-                    </div> 
-                    : 
-                    <div></div>}
+                    {user && user?.email ?
+                        <div className="flex items-center">
+                            <img
+                                className="w-12 h-12 rounded-full"
+                                src={user?.photoURL || "https://cdn.pixabay.com/photo/2018/11/13/21/43/avatar-3814049_1280.png"}
+                                alt="User"
+                            />
+                            <p>{user.displayName}</p>
+                        </div>
+                        :
+                        <div></div>}
                 </div>
                 {
-                    user && user?.email ? 
-                    <button onClick={logOut} className="btn">Logout</button>
-                    :
+                    user && user?.email ?
+                        <button onClick={logOut} className="btn">Logout</button>
+                        :
                         <div>
                             <Link className="btn" to='/auth/login'>Login</Link>
                             <Link className="btn" to='/auth/register'>Signup</Link>

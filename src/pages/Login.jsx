@@ -6,7 +6,7 @@ import { AuthContext } from "../provider/AuthProvider";
 const Login = () => {
 
     // const provider = new GoogleAuthProvider();
-    const { userLogin, setUser } = useContext(AuthContext);
+    const { userLogin, setUser, signInWithGoogle } = useContext(AuthContext);
     const [error, setError] = useState({});
     const location = useLocation();
     console.log(location);
@@ -18,30 +18,30 @@ const Login = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
+        setError({}); // Clear previous errors
         userLogin(email, password)
             .then((result) => {
                 const user = result.user;
                 setUser(user);
-                navigate(location?.state ? location.state : "/")
+                navigate(location?.state?.from?.pathname || "/");
             })
             .catch((err) => {
-                setError({...error, login:err.code})
+                setError({ login: err.code });
             });
-
-            
     };
+    
 
-    // const handleGoogleSignIn = () => {
-    //     signInWithPopup(auth, provider)
-    //         .then((result) => {
-    //             const user = result.user;
-    //             setUser(user); // Save user to context
-    //             navigate(location?.state?.from || '/', { replace: true });
-    //         })
-    //         .catch((error) => {
-    //             setError({ ...error, google: error.message });
-    //         });
-    // };
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then((result) => {
+                const user = result.user;
+                setUser(user); // Save user to context
+                navigate(location?.state?.from || '/', { replace: true });
+            })
+            .catch((error) => {
+                setError({ ...error, google: error.message });
+            });
+    };
 
     return (
         <div className="min-h-screen flex justify-center items-center">
@@ -91,12 +91,11 @@ const Login = () => {
                     <div>
                         <h2 className="text-center font-medium">Or</h2>
                     </div>
-                    {/* {error.google && (
+                    {error.google && (
                         <label className="label text-red-600 text-sm">{error.google}</label>
-                    )} */}
+                    )}
                 </form>
-                <button className="btn btn-wide md:w-[368px] mx-auto">
-                {/* <button onClick={handleGoogleSignIn} className="btn btn-wide md:w-[368px] mx-auto"> */}
+                <button onClick={handleGoogleSignIn} className="btn btn-wide md:w-[368px] mx-auto">
                     <FaGoogle /> Login with Google
                 </button>
             </div>
