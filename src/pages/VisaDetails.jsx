@@ -8,7 +8,7 @@ const VisaDetails = () => {
         <div>
             <div className="card bg-base-100 w-2/5 mx-auto shadow-xl my-10">
                 <figure>
-                    <img className='w-full h-80 object-cover'
+                    <img className='w-full h-60 object-cover'
                         src={countryPhoto}
                     />
                 </figure>
