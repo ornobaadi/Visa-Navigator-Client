@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 
 const Login = () => {
@@ -8,8 +8,9 @@ const Login = () => {
     // const provider = new GoogleAuthProvider();
     const { userLogin, setUser } = useContext(AuthContext);
     const [error, setError] = useState({});
-    // const location = useLocation();
-    // const navigate = useNavigate();
+    const location = useLocation();
+    console.log(location);
+    const navigate = useNavigate();
     // const emailRef = useRef();
 
     const handleSubmit = (e) => {
@@ -21,10 +22,10 @@ const Login = () => {
             .then((result) => {
                 const user = result.user;
                 setUser(user);
-                // navigate(location?.state?.from || '/', { replace: true });
+                navigate(location?.state ? location.state : "/")
             })
             .catch((err) => {
-                setError({ ...error, login: err.code });
+                setError({...error, login:err.code})
             });
 
             
@@ -71,9 +72,9 @@ const Login = () => {
                             className="input input-bordered"
                             required
                         />
-                        {/* {error.login && (
+                        {error.login && (
                             <label className="label text-red-600 text-sm">{error.login}</label>
-                        )} */}
+                        )}
                         <label className="label">
                             <span className="label-text-alt link link-hover">Forgot password?</span>
                         </label>

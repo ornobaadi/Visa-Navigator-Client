@@ -10,6 +10,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import AuthLayout from "../layouts/AuthLayout";
 import VisaDetails from "../pages/VisaDetails";
+import PrivateRoute from "../routes/PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -24,8 +25,10 @@ const router = createBrowserRouter([
             },
             {
                 path: 'allvisa/visa-details/:id',
-                element: <VisaDetails></VisaDetails>,
-                loader: ({params}) => fetch(`http://localhost:5000/visa/${params.id}`)
+                element: <PrivateRoute>
+                    <VisaDetails></VisaDetails>
+                </PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/visa/${params.id}`)
             },
             {
                 path: '/allvisa',
