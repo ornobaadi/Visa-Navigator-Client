@@ -40,7 +40,7 @@ const Register = () => {
                 const newUser = { name, email, photo }
 
                 // Save new user info to the database
-                fetch('http://localhost:5000/users', {
+                fetch('https://visa-navigator-server-umber.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -74,7 +74,11 @@ const Register = () => {
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                console.log(errorCode, errorMessage);
+                if (errorCode === "auth/email-already-in-use") {
+                    setError({ email: "This email is already in use. Please use another one." });
+                } else {
+                    setError({ general: errorMessage });
+                }
             });
     };
     const handleGoogleSignIn = () => {
@@ -88,7 +92,7 @@ const Register = () => {
                 };
     
                 // Check or add user in the database
-                fetch('http://localhost:5000/users', {
+                fetch('https://visa-navigator-server-umber.vercel.app/users', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(newUser),

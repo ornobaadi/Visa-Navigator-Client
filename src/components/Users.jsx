@@ -6,7 +6,7 @@ const Users = () => {
     const loadedUsers = useLoaderData();
     const [users, setUsers] = useState(loadedUsers);
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('https://visa-navigator-server-umber.vercel.app/users')
             .then((res) => res.json())
             .then((data) => setUsers(data));
     }, []);
@@ -26,7 +26,7 @@ const Users = () => {
 
 
                 // delete from the database 
-                fetch(`http://localhost:5000/users/${id}`, {
+                fetch(`https://visa-navigator-server-umber.vercel.app/users/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -45,8 +45,6 @@ const Users = () => {
             }
         });
     }
-
-
 
     return (
         <div>

@@ -27,26 +27,26 @@ const router = createBrowserRouter([
             {
                 path: 'users',
                 element: <Users></Users>,
-                loader: () => fetch('http://localhost:5000/users')
+                loader: () => fetch('https://visa-navigator-server-umber.vercel.app/users')
             },
             {
                 path: 'allvisa/visa-details/:id',
                 element: <PrivateRoute>
                     <VisaDetails></VisaDetails>
                 </PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/visa/${params.id}`)
+                loader: ({ params }) => fetch(`https://visa-navigator-server-umber.vercel.app/visa/${params.id}`)
             },
             {
                 path: '/visa-details/:id',
                 element: <PrivateRoute>
                     <VisaDetails></VisaDetails>
                 </PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/visa/${params.id}`)
+                loader: ({ params }) => fetch(`https://visa-navigator-server-umber.vercel.app/visa/${params.id}`)
             },
             {
                 path: '/allvisa',
                 element: <AllVisa></AllVisa>,
-                loader: () => fetch('http://localhost:5000/visa')
+                loader: () => fetch('https://visa-navigator-server-umber.vercel.app/visa')
             },
             {
                 path: '/addvisa',
@@ -59,7 +59,7 @@ const router = createBrowserRouter([
                 element: <PrivateRoute>
                     <MyAddedVisa></MyAddedVisa>
                 </PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/visa')
+                loader: () => fetch('https://visa-navigator-server-umber.vercel.app/visa')
             },
             {
                 path: '/my-visa-applications',

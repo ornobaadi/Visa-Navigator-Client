@@ -26,7 +26,7 @@ const AddVisa = () => {
         console.log(newVisa);
 
         // send data to server 
-        fetch('http://localhost:5000/visa',{
+        fetch('https://visa-navigator-server-umber.vercel.app/visa',{
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'

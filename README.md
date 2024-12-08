@@ -2,7 +2,7 @@
 
 Welcome to **Visa Navigator** – your ultimate gateway to simplifying visa processes. Our dynamic, user-friendly portal empowers users to check visa requirements, apply online, and track applications effortlessly. ✈️✨  
 
-🚀 **[Live Website](#)** | 💻 **[Client-side Repository](https://github.com/programming-hero-web-course2/b10-a10-client-side-ornobaadi)** | 🛠️ **[Server-side Repository](https://github.com/programming-hero-web-course2/b10-a10-server-side-ornobaadi)**  
+🚀 **[Live Website](https://visa-navigator-ornobaadi.surge.sh)** | 💻 **[Client-side Repository](https://github.com/programming-hero-web-course2/b10-a10-client-side-ornobaadi)** | 🛠️ **[Server-side Repository](https://github.com/programming-hero-web-course2/b10-a10-server-side-ornobaadi)**  
 
 ---
 

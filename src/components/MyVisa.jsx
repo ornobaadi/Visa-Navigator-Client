@@ -18,7 +18,7 @@ const MyVisa = ({ visa, setVisas, visas }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/visa/${_id}`, {
+                fetch(`https://visa-navigator-server-umber.vercel.app/visa/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -60,7 +60,7 @@ const MyVisa = ({ visa, setVisas, visas }) => {
         };
 
         // send data to server 
-        fetch(`http://localhost:5000/visa/${_id}`, {
+        fetch(`https://visa-navigator-server-umber.vercel.app/visa/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

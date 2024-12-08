@@ -42,7 +42,7 @@ const Login = () => {
                 };
     
                 // Check or add user in the database
-                fetch('http://localhost:5000/users', {
+                fetch('https://visa-navigator-server-umber.vercel.app/users', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(newUser),

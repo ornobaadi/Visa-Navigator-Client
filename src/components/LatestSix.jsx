@@ -7,7 +7,7 @@ const LatestSix = () => {
 
     useEffect(() => {
         // Fetch the six most recent visa entries from the backend
-        fetch("http://localhost:5000/latestSix")
+        fetch("https://visa-navigator-server-umber.vercel.app/latestSix")
             .then((res) => res.json())
             .then((data) => {
                 setLatestSix(data);
