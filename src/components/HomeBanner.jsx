@@ -1,7 +1,8 @@
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
+import { Typewriter } from "react-simple-typewriter";
 
 const HomeBanner = () => {
     const slides = [
@@ -39,11 +40,11 @@ const HomeBanner = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 5000,
     };
 
     return (
-        <div className="relative px-4 md:px-10">
+        <div className="relative my-5 px-4 md:px-10">
             <Slider {...settings}>
                 {slides.map((slide, index) => (
                     <div key={index} className="relative h-[400px] md:h-[600px]">
@@ -59,7 +60,17 @@ const HomeBanner = () => {
                         ></div>
                         {/* Content */}
                         <div className="relative z-10 flex flex-col justify-center items-center text-center h-full px-4 text-white">
-                            <h1 className="text-2xl md:text-4xl font-bold">{slide.title}</h1>
+                            <h1 className="text-3xl md:text-5xl font-bold">
+                                <Typewriter
+                                    words={[slide.title]}
+                                    loop={false}
+                                    cursor
+                                    cursorStyle="|"
+                                    typeSpeed={100}
+                                    deleteSpeed={50}
+                                    delaySpeed={1000}
+                                />
+                            </h1>
                             <p className="mt-4 text-lg md:text-xl max-w-3xl">{slide.description}</p>
                             <Link to="/about" className="mt-6 px-6 py-2 btn btn-accent text-lg font-bold rounded-lg">
                                 Learn More
