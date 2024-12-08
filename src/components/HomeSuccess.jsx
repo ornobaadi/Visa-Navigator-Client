@@ -4,7 +4,7 @@ import { Fade } from "react-awesome-reveal";
 
 const HomeSuccess = () => {
     return (
-        <section className="bg-green-50 py-12 px-6">
+        <section className=" py-12 px-6">
             <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8">
                 {/* Left Image Section */}
                 <div className="flex-1">
@@ -14,7 +14,6 @@ const HomeSuccess = () => {
                         className="rounded-lg shadow-lg"
                     />
                 </div>
-
                 {/* Right Content Section */}
                 <div className="flex-1 space-y-6">
                     <div className="flex items-center gap-4">

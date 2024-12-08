@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <footer className="footer footer-center text-lg bg-gray-50 text-base-content rounded p-10">
+        <footer className="footer footer-center text-lg rounded p-10">
             <p className="font-semibold">
                     EZ Visa Pvt Ltd.
                     <br />

@@ -46,7 +46,7 @@ const Navbar = () => {
                 </div>
                 
                 <Link to='/' className="btn btn-ghost text-xl">
-                <img className="w-10" src="/favicon.png" alt="" />
+                <img className="w-10 hidden md:inline" src="/favicon.png" alt="" />
                 EZ VISA
                 </Link>
             </div>
