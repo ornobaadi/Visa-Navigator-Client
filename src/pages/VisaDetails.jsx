@@ -6,7 +6,7 @@ const VisaDetails = () => {
     const visa = useLoaderData();
     const { _id, countryPhoto, countryName, visaType, processingTime, requiredDocuments, description, fee, validity, ageRestriction, applicationMethod } = visa;
 
-    const [userEmail, setUserEmail] = useState(""); // Initialize with an empty string
+    const [userEmail, setUserEmail] = useState("");
 
     const handleApply = async (e) => {
         e.preventDefault();
@@ -23,12 +23,11 @@ const VisaDetails = () => {
             appliedDate,
             fee,
             visaId: _id,
-            countryName, // Include country name
-            visaType, // Include visa type
-            countryPhoto // Include country image
+            countryName,
+            visaType,
+            countryPhoto,
         };
 
-        // Send application data to the server
         const response = await fetch('https://visa-navigator-server-umber.vercel.app/applications', {
             method: 'POST',
             headers: {
@@ -46,24 +45,22 @@ const VisaDetails = () => {
                 showConfirmButton: false,
                 timer: 1000,
             });
-            // Close the modal after submission
             document.getElementById('my_modal_5').close();
         }
     };
 
     return (
-        <div>
-            <div className="card bg-base-100 w-2/5 mx-auto shadow-xl my-10">
+        <div className="px-4">
+            <div className="card bg-base-100 max-w-4xl mx-auto shadow-xl my-10">
                 <figure>
-                    <img className='w-full h-60 object-cover' src={countryPhoto} alt={countryName} />
+                    <img className="w-full h-60 object-cover" src={countryPhoto} alt={countryName} />
                 </figure>
                 <div className="card-body">
-                    <h2 className="font-bold text-4xl py-4">{countryName}</h2>
+                    <h2 className="font-bold text-2xl md:text-4xl py-4 text-center">{countryName}</h2>
                     <p><strong>Visa Type:</strong> {visaType}</p>
                     <p><strong>Processing Time:</strong> {processingTime} Days</p>
-                    
                     <p><strong>Required Documents:</strong></p>
-                    <ul className="list-disc list-inside ">
+                    <ul className="list-disc list-inside">
                         {requiredDocuments?.length ? (
                             requiredDocuments.map((doc, index) => (
                                 <li key={index} className="flex items-center">
@@ -74,14 +71,18 @@ const VisaDetails = () => {
                             <li>N/A</li>
                         )}
                     </ul>
-
                     <p><strong>Application Method:</strong> {applicationMethod}</p>
                     <p><strong>Age Restriction:</strong> {ageRestriction}+</p>
                     <p><strong>Description:</strong> {description}</p>
                     <p><strong>Validity:</strong> {validity} Days</p>
-                    <p><strong>Fee:</strong> ${fee} </p>
+                    <p><strong>Fee:</strong> ${fee}</p>
                     <div className="card-actions justify-center mt-5">
-                        <button className='w-full btn btn-neutral' onClick={() => document.getElementById('my_modal_5').showModal()}>Apply</button>
+                        <button
+                            className="w-full md:w-auto btn btn-neutral"
+                            onClick={() => document.getElementById('my_modal_5').showModal()}
+                        >
+                            Apply
+                        </button>
                     </div>
                 </div>
             </div>
@@ -91,16 +92,28 @@ const VisaDetails = () => {
                 <div className="modal-box">
                     <h3 className="font-bold text-lg">Apply for Visa</h3>
                     <form onSubmit={handleApply} className="flex flex-col">
-                        <input 
-                            type="email" 
-                            value={userEmail} 
-                            onChange={(e) => setUserEmail(e.target.value)} // Allow user to input their email
-                            placeholder="Enter your email" 
-                            className="input input-bordered mb-4" 
-                            required 
+                        <input
+                            type="email"
+                            value={userEmail}
+                            onChange={(e) => setUserEmail(e.target.value)}
+                            placeholder="Enter your email"
+                            className="input input-bordered mb-4"
+                            required
                         />
-                        <input type="text" name="firstName" placeholder="First Name" className="input input-bordered mb-4" required />
-                        <input type="text" name="lastName" placeholder="Last Name" className="input input-bordered mb-4" required />
+                        <input
+                            type="text"
+                            name="firstName"
+                            placeholder="First Name"
+                            className="input input-bordered mb-4"
+                            required
+                        />
+                        <input
+                            type="text"
+                            name="lastName"
+                            placeholder="Last Name"
+                            className="input input-bordered mb-4"
+                            required
+                        />
                         <p className="mb-2"><strong>Applied Date:</strong> {new Date().toLocaleDateString()}</p>
                         <p className="mb-4"><strong>Visa Fee:</strong> ${fee}</p>
                         <div className="modal-action">
