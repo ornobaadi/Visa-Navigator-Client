@@ -35,11 +35,32 @@ const Login = () => {
         signInWithGoogle()
             .then((result) => {
                 const user = result.user;
-                setUser(user); // Save user to context
-                navigate(location?.state?.from || '/', { replace: true });
+                const newUser = {
+                    name: user.displayName,
+                    email: user.email,
+                    photo: user.photoURL,
+                };
+    
+                // Check or add user in the database
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(newUser),
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        if (data.message === 'User already exists') {
+                            console.log('User already exists:', data.user);
+                        } else {
+                            console.log('New user created:', data.user);
+                        }
+                        setUser(user); // Save user to context
+                        navigate(location?.state?.from || '/', { replace: true });
+                    })
+                    .catch((err) => console.error('Error:', err));
             })
             .catch((error) => {
-                setError({ ...error, google: error.message });
+                setError({ google: error.message });
             });
     };
 

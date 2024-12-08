@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const Register = () => {
 
@@ -34,9 +35,34 @@ const Register = () => {
 
         createNewUser(email, password)
             .then(result => {
+                console.log('User created at firebase', result.user);
                 const user = result.user;
+                const newUser = { name, email, photo }
+
+                // Save new user info to the database
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(newUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if(data.insertedId){
+                            console.log('user created in db');
+                            Swal.fire({
+                                position: "top-center",
+                                icon: "success",
+                                title: "Registration Successful!",
+                                showConfirmButton: false,
+                                timer: 1500
+                            });
+                        }
+                    });
+
                 setUser(user);
-                console.log(user);
+                // console.log(user);
                 updateUserProfile({ displayName: name, photoURL: photo })
                     .then(() => {
                         navigate('/');
@@ -55,13 +81,37 @@ const Register = () => {
         signInWithGoogle()
             .then((result) => {
                 const user = result.user;
-                setUser(user); // Save user to context
-                navigate(location?.state?.from || '/', { replace: true });
+                const newUser = {
+                    name: user.displayName,
+                    email: user.email,
+                    photo: user.photoURL,
+                };
+    
+                // Check or add user in the database
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(newUser),
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        if (data.message === 'User already exists') {
+                            console.log('User already exists:', data.user);
+                        } else {
+                            console.log('New user created:', data.user);
+                        }
+                        setUser(user); // Save user to context
+                        navigate(location?.state?.from || '/', { replace: true });
+                    })
+                    .catch((err) => console.error('Error:', err));
             })
             .catch((error) => {
-                setError({ ...error, google: error.message });
+                setError({ google: error.message });
             });
     };
+    
+    
+    
 
     return (
         <div className="min-h-screen flex justify-center items-center">
@@ -101,11 +151,11 @@ const Register = () => {
                     <div className="form-control mt-6">
                         <button className="btn btn-neutral">Sign Up</button>
                     </div>
-                <h2 className="text-center py-5 "> Already have an Account? {" "} <Link className="font-semibold link-hover" to='/auth/login'>Login</Link> </h2>
-                <div>
-                    <h2 className="text-center font-medium">Or</h2>
-                </div>
-                {error.google && (
+                    <h2 className="text-center py-5 "> Already have an Account? {" "} <Link className="font-semibold link-hover" to='/auth/login'>Login</Link> </h2>
+                    <div>
+                        <h2 className="text-center font-medium">Or</h2>
+                    </div>
+                    {error.google && (
                         <label className="label text-red-600 text-sm">{error.google}</label>
                     )}
                 </form>

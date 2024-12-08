@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <footer className="footer footer-center text-lg rounded p-10">
-            <p className="font-semibold">
+        <footer className="footer footer-center text-lg rounded p-5">
+            <img className="w-32" src="/favicon.png" alt="" />
+            <p className="font-semibold text-xl">
                     EZ Visa Pvt Ltd.
                     <br />
                     Providing reliable services since 2012
