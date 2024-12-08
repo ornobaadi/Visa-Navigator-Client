@@ -16,8 +16,8 @@ const LatestSix = () => {
     }, []);
 
     return (
-        <div>
-            <h1 className="text-center text-4xl mb-6 mt-20 font-bold bg-gradient-to-r from-yellow-900 via-yellow-400 to-yellow-900 bg-clip-text text-transparent">
+        <div className='w-11/12 mx-auto'>
+            <h1 className="text-center text-4xl mb-6 mt-20 font-bold ">
                 New Visas
             </h1>
 
@@ -27,7 +27,7 @@ const LatestSix = () => {
                 ))}
             </div>
             <div className='flex justify-center my-10'>
-                <Link to='/allvisa' className="btn btn-wide bg-emerald-400">See All Data</Link>
+                <Link to='/allvisa' className="btn btn-wide bg-emerald-400">See All Available Visa</Link>
             </div>
         </div>
     );

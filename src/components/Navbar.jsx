@@ -44,7 +44,11 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost text-xl">VISA</Link>
+                
+                <Link to='/' className="btn btn-ghost text-xl">
+                <img className="w-10" src="/favicon.png" alt="" />
+                EZ VISA
+                </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

@@ -10,7 +10,9 @@ const HomeCard = ({ visa }) => {
                     <img className="h-60 w-full object-cover md:h-60" src={countryPhoto} />
                 </figure>
                 <div className="card-body">
-                    <h2 className="font-bold text-xl md:text-4xl py-4">{countryName}</h2>
+                    <h2 className="font-bold text-xl md:text-4xl py-4">{countryName} &nbsp; 
+                    <div className="badge badge-info">NEW</div>
+                    </h2>
                     <p><strong>Visa Type:</strong> {visaType}</p>
                     <p><strong>Processing Time:</strong> {processingTime} Days</p>
                     <p><strong>Required Documents:</strong></p>

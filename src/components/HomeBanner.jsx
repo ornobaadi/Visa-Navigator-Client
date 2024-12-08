@@ -9,27 +9,17 @@ const HomeBanner = () => {
         {
             title: "Explore Visa Options Worldwide",
             description: "Find the right visa for your destination with our comprehensive visa database.",
-            background: "https://cdn.pixabay.com/photo/2022/11/02/10/05/passport-7564502_1280.jpg",
+            background: "https://color-hex.org/colors/034833.png",
         },
         {
             title: "Track Your Visa Application",
             description: "Stay informed with real-time updates on your visa application status.",
-            background: "https://plus.unsplash.com/premium_photo-1663100543409-061876b76b0e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            background: "https://i.pinimg.com/736x/fb/f0/ef/fbf0efd993d06415633881cd7b0c43de.jpg",
         },
         {
             title: "Hassle-Free Visa Applications",
             description: "Easily apply for visas online with step-by-step guidance tailored to your needs.",
-            background: "https://images.pexels.com/photos/7009468/pexels-photo-7009468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        },
-        {
-            title: "Personalized Visa Support",
-            description: "Our dedicated team provides expert guidance to simplify your visa process.",
-            background: "https://images.pexels.com/photos/4922356/pexels-photo-4922356.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", 
-        },
-        {
-            title: "Your Trusted Visa Companion",
-            description: "Navigate visa requirements and applications with ease using our platform.",
-            background: "https://images.pexels.com/photos/8372634/pexels-photo-8372634.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", 
+            background: "https://wallpapers.com/images/hd/black-solid-background-2920-x-1642-jk98dr7udfcq3hqj.jpg",
         },
     ];
 
@@ -71,8 +61,8 @@ const HomeBanner = () => {
                                     delaySpeed={1000}
                                 />
                             </h1>
-                            <p className="mt-4 text-lg md:text-xl max-w-3xl">{slide.description}</p>
-                            <Link to="/about" className="mt-6 px-6 py-2 btn btn-accent text-lg font-bold rounded-lg">
+                            <p className="my-10 text-lg md:text-xl max-w-3xl">{slide.description}</p>
+                            <Link to="/about" className=" px-6 btn btn-accent text-lg font-bold rounded-lg">
                                 Learn More
                             </Link>
                         </div>
