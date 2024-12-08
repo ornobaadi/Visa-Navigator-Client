@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useLoaderData } from "react-router-dom";
+/* eslint-disable react/prop-types */
+import { useState } from 'react';
 import Swal from "sweetalert2";
 
 // Updated MyVisa Component

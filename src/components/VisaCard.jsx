@@ -17,7 +17,6 @@ const VisaCard = ({ visa }) => {
                 <div className="card-body">
                     <h2 className="font-bold text-2xl py-4">
                         {countryName} &nbsp;
-                        <div className="badge badge-info">NEW</div>
                     </h2>
                     <p><span className='font-bold'>Visa Type:</span> {visaType}</p>
                     <p><span className='font-bold'>Processing Time:</span> {processingTime} Days</p>

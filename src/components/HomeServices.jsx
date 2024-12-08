@@ -30,14 +30,11 @@ const services = [
 
 const HomeServices = () => {
     return (
-        <section className=" overflow-hidden py-10">
-            <div className="mx-auto px-10">
+        <section className="overflow-hidden py-10">
+            <div className="mx-auto px-4 md:px-10">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {services.map((visa) => (
-                        <div
-                            key={visa.id}
-                            className="service__item shadow-md p-6 rounded-lg hover:shadow-lg transition-shadow relative"
-                        >
+                        <div key={visa.id} className="service__item shadow-md p-6 rounded-lg hover:shadow-lg transition-shadow relative">
                             <div className="text-4xl text-lime-600 mb-4 flex">
                                 {visa.icon}
                             </div>

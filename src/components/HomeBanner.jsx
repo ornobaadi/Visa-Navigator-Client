@@ -43,7 +43,7 @@ const HomeBanner = () => {
     };
 
     return (
-        <div className="relative px-10">
+        <div className="relative px-4 md:px-10">
             <Slider {...settings}>
                 {slides.map((slide, index) => (
                     <div key={index} className="relative h-[400px] md:h-[600px]">
@@ -59,7 +59,7 @@ const HomeBanner = () => {
                         ></div>
                         {/* Content */}
                         <div className="relative z-10 flex flex-col justify-center items-center text-center h-full px-4 text-white">
-                            <h1 className="text-3xl md:text-5xl font-bold">{slide.title}</h1>
+                            <h1 className="text-2xl md:text-4xl font-bold">{slide.title}</h1>
                             <p className="mt-4 text-lg md:text-xl max-w-3xl">{slide.description}</p>
                             <Link to="/about" className="mt-6 px-6 py-2 btn btn-accent text-lg font-bold rounded-lg">
                                 Learn More
