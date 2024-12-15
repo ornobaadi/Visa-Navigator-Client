@@ -62,7 +62,7 @@ const HomeBanner = () => {
                                 />
                             </h1>
                             <p className="my-10 text-lg md:text-xl max-w-3xl">{slide.description}</p>
-                            <Link to="/about" className=" px-6 btn btn-accent text-lg font-bold rounded-lg">
+                            <Link to="/allvisa" className=" px-6 btn btn-accent text-lg font-bold rounded-lg">
                                 Learn More
                             </Link>
                         </div>
