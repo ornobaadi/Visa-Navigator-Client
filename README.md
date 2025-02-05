@@ -1,81 +1,162 @@
+
+<div align="center">
+  <img src="public/EZ Visa Mockup.png" alt="Visa Navigator Mockup" width="700">
+</div>
+
 # 🌍 **Visa Navigator** 🌍  
 
-Welcome to **Visa Navigator** – your ultimate gateway to simplifying visa processes. Our dynamic, user-friendly portal empowers users to check visa requirements, apply online, and track applications effortlessly. ✈️✨  
-
-🚀 **[Live Website](https://visa-navigator-ornobaadi.surge.sh)** | 💻 **[Client-side Repository](https://github.com/programming-hero-web-course2/b10-a10-client-side-ornobaadi)** | 🛠️ **[Server-side Repository](https://github.com/programming-hero-web-course2/b10-a10-server-side-ornobaadi)**  
+**Visa Navigator** is your ultimate gateway to simplifying visa processes. This dynamic, user-friendly platform empowers users to check visa requirements, apply online, and track applications effortlessly. ✈️✨  
 
 ---
 
-## 🌟 **Features That Shine Bright**  
-1. **Dynamic Visa Explorer**: Discover visas tailored to your needs with an intuitive and visually stunning interface.  
-2. **Hassle-free Applications**: Apply for visas directly with a secure, guided process.  
-3. **Personalized Tracking**: Keep tabs on your applications with a sleek dashboard.  
-4. **Responsiveness Redefined**: Seamless functionality across mobile, tablet, and desktop devices.  
-5. **Theme Toggle Magic**: Switch effortlessly between light and dark modes for the best browsing experience.  
+## 🌐 **Live Demo & Repositories**
+
+- 🚀 **[Live Website](https://visa-navigator-ornobaadi.surge.sh)**  
+- 💻 **[Client-side Repository](https://github.com/programming-hero-web-course2/b10-a10-client-side-ornobaadi)**  
+- 🛠️ **[Server-side Repository](https://github.com/programming-hero-web-course2/b10-a10-server-side-ornobaadi)**  
 
 ---
 
-## 🎯 **Key Highlights**  
-- **Protected Routes**: Secure private routes for sensitive actions like adding or tracking visas.  
-- **Real-time CRUD Operations**: Add, update, or delete visa entries with instant notifications via toasts.  
-- **Comprehensive Visa Details**: Every visa card is packed with rich details like processing time, fees, and validity.  
-- **Advanced Filters**: Find the perfect visa by type or search applications by country name.  
-- **Interactive UI Enhancements**: Animations powered by **Lottie React** and **React Awesome Reveal** make navigation delightful.  
+## 🎯 **Overview**
+
+Visa Navigator helps streamline the often complicated visa process by offering an intuitive, secure, and interactive experience. Users can explore visa options, apply online, and track their applications with ease.
 
 ---
 
-## 🖼️ **Screenshot Previews**  
-### 🏠 Home Page  
-- Engaging banner slider with meaningful visuals.  
-- Latest visas and additional informative sections.  
+## 🌟 **Core Features**
 
-### ✏️ Add Visa  
-- Easy-to-use form to add new visas with multi-select options.  
-
-### 🛠️ All Visas  
-- Comprehensive grid layout showcasing all visas with filtering capabilities.  
-
-### 📜 Visa Details  
-- Detailed view of visa requirements with an "Apply for Visa" button.  
+- **Dynamic Visa Explorer**: Discover tailored visa options through a visually stunning, user-friendly interface.
+- **Hassle-Free Applications**: Secure and guided visa application process.
+- **Personalized Tracking**: Track your visa applications via a sleek, real-time dashboard.
+- **Responsive Design**: Optimized for mobile, tablet, and desktop for seamless use across all devices.
+- **Theme Toggle**: Effortlessly switch between light and dark modes for a customized browsing experience.
 
 ---
 
-## 🔑 **Authentication Flow**  
-1. **Login Page**  
-   - Email & Password login with Google Authentication.  
-   - Instant error messages for invalid inputs.  
+## 🔐 **Authentication & Security**
 
-2. **Registration Page**  
-   - Seamless onboarding with live password validation.  
-   - Direct navigation to home upon success.  
+- **Secure Login & Registration**: Email/password authentication with Google sign-in via Firebase.
+- **Protected Routes**: Restricted access to sensitive pages like visa applications and tracking.
+- **Environment Security**: Sensitive information such as Firebase keys and MongoDB credentials are securely managed using `.env` files.
 
 ---
 
-## 🎨 **Tech Stack & Tools**  
+## 💻 **Tech Stack**
+
 - **Frontend**: React, Tailwind CSS  
 - **Backend**: Node.js, Express.js  
 - **Database**: MongoDB  
-- **Hosting**: Netlify (Client) & Vercel (Server)  
 - **Authentication**: Firebase Authentication  
-- **Environment Security**: Firebase keys and MongoDB credentials are securely hidden with `.env`.  
+- **Hosting**: Netlify (Client) & Vercel (Server)  
 
 ---
 
-## 📢 **How It Works**  
-1. Explore visas, check details, or filter by type.  
-2. Apply for a visa via a form modal and track your applications in real-time.  
-3. Manage your contributions through the "My Added Visas" page.  
+## 📦 **Dependencies**
+
+- **React Router DOM**: Handles navigation and routing.
+- **Firebase**: Authentication and real-time database services.
+- **Axios**: API requests and data fetching.
+- **Lottie React**: Interactive animations for an engaging UI.
+- **React Awesome Reveal**: Smooth animation effects for UI components.
+- **React Hot Toast**: Clean toast notifications for user feedback.
 
 ---
 
-## 💡 **Future Enhancements**  
-- Multi-language support for global users.  
-- Integration with embassy APIs for real-time updates.  
-- Enhanced analytics dashboard for users.  
+## 🛠️ **Getting Started**
+
+Follow these steps to run **Visa Navigator** locally:
+
+1. **Clone the Client & Server Repositories**
+
+   ```bash
+   git clone https://github.com/ornobaadi/Visa-Navigator-Client.git
+   git clone https://github.com/ornobaadi/Visa-Navigator-Server.git
+   ```
+
+2. **Navigate to Each Project Directory**
+
+   ```bash
+   cd Visa-Navigator-Client
+   cd Visa-Navigator-Server
+   ```
+
+3. **Install Dependencies for Both Projects**
+
+   ```bash
+   npm install
+   ```
+
+4. **Set Up Environment Variables**
+
+   Create a `.env` file in both the **client** and **server** directories and add your Firebase and MongoDB credentials.
+
+   **Client `.env`**
+
+   ```env
+   VITE_API_KEY=your_firebase_api_key
+   VITE_AUTH_DOMAIN=your_project_auth_domain
+   VITE_PROJECT_ID=your_project_id
+   VITE_STORAGE_BUCKET=your_storage_bucket
+   VITE_MESSAGING_SENDER_ID=your_messaging_sender_id
+   VITE_APP_ID=your_app_id
+   ```
+
+   **Server `.env`**
+
+   ```env
+   MONGODB_URI=your_mongodb_connection_string
+   PORT=5000
+   ```
+
+5. **Run the Development Servers**
+
+   **For the Client:**
+
+   ```bash
+   npm run dev
+   ```
+
+   **For the Server:**
+
+   ```bash
+   nodemon index.js
+   ```
+
+6. **View the Application**
+
+   Open your browser and go to [http://localhost:5173](http://localhost:5173) for the client and [http://localhost:5000](http://localhost:5000) for the server.
 
 ---
 
-## 🤝 **Contributors**  
-Developed with ❤️ and dedication by Ornob Aadi.  
+## 🖼️ **Screenshots**
 
-🎉 Dive into **Visa Navigator** today and make visa processes stress-free!
+### 🏠 **Home Page**
+- Engaging banner with dynamic visuals.
+- Display of the latest visas and informative sections.
+
+### ✏️ **Add Visa**
+- User-friendly form with multi-select options for adding new visas.
+
+### 🗂️ **All Visas**
+- Grid layout showcasing all available visas with advanced filtering capabilities.
+
+### 📜 **Visa Details**
+- Detailed visa information, including processing time, fees, and an "Apply for Visa" button.
+
+---
+
+## 💡 **Future Enhancements**
+
+- 🌍 Multi-language support for global users.
+- 🏢 Integration with embassy APIs for real-time visa updates.
+- 📊 Enhanced analytics dashboard for tracking user interactions and visa trends.
+
+---
+
+## 🤝 **Contributors**
+
+Developed with ❤️ and dedication by [**Ornob Aadi**](https://github.com/ornobaadi).
+
+---
+
+🎉 **Get started with Visa Navigator today and make visa applications a breeze!** ✈️🌍
