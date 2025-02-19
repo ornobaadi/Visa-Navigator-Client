@@ -3,23 +3,23 @@
   <img src="public/EZ Visa Mockup.png" alt="Visa Navigator Mockup" width="700">
 </div>
 
-# 🌍 **Visa Navigator** 🌍  
+# 🌍 **EZ Visa** 🌍  
 
-**Visa Navigator** is your ultimate gateway to simplifying visa processes. This dynamic, user-friendly platform empowers users to check visa requirements, apply online, and track applications effortlessly. ✈️✨  
+**EZ Visa** is your ultimate gateway to simplifying visa processes. This dynamic, user-friendly platform empowers users to check visa requirements, apply online, and track applications effortlessly. ✈️✨  
 
 ---
 
 ## 🌐 **Live Demo & Repositories**
 
-- 🚀 **[Live Website](https://visa-navigator-ornobaadi.surge.sh)**  
-- 💻 **[Client-side Repository](https://github.com/programming-hero-web-course2/b10-a10-client-side-ornobaadi)**  
-- 🛠️ **[Server-side Repository](https://github.com/programming-hero-web-course2/b10-a10-server-side-ornobaadi)**  
+- 🚀 **[Live Website](https://ez-visa-1.web.app/)**  
+- 💻 **[Client-side Repository](https://github.com/ornobaadi/Visa-Navigator-Client)**  
+- 🛠️ **[Server-side Repository](https://github.com/ornobaadi/Visa-Navigator-Server)**  
 
 ---
 
 ## 🎯 **Overview**
 
-Visa Navigator helps streamline the often complicated visa process by offering an intuitive, secure, and interactive experience. Users can explore visa options, apply online, and track their applications with ease.
+EZ Visa helps streamline the often complicated visa process by offering an intuitive, secure, and interactive experience. Users can explore visa options, apply online, and track their applications with ease.
 
 ---
 
@@ -47,7 +47,7 @@ Visa Navigator helps streamline the often complicated visa process by offering a
 - **Backend**: Node.js, Express.js  
 - **Database**: MongoDB  
 - **Authentication**: Firebase Authentication  
-- **Hosting**: Netlify (Client) & Vercel (Server)  
+- **Hosting**: Surge (Client) & Vercel (Server)  
 
 ---
 
